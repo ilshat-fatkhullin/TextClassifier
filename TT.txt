@@ -1,0 +1,16 @@
+Technical task:
+1.Build dictionary of words styles.
+2.Build dictionary of compositions styles.
+3.Build dictionary of authors styles.
+4.Build learning data.
+5.Create solver.
+
+Features:
+1.-0+ (Text style based on the dictionary of words style)
+2.Author features:
+    1.-0+ (Author writing style based on style of all compositions that he has created)
+    2.Writing years
+3.Composition features:
+    1.-0+ (Composition style based on style of words which contain there)
+
+Summury: 4 features.
