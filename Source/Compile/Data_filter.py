@@ -16,6 +16,8 @@ def DeletePunctuation(Sentence):
     Sentence = Sentence.replace("+", " ")
     Sentence = Sentence.replace("–", " ")
     Sentence = Sentence.replace("»", " ")
+    Sentence = Sentence.replace("--", " ")
+    Sentence = Sentence.replace('--', " ")
     Sentence = Sentence.replace("«", " ")
     Sentence = Sentence.replace(":", " ")
     Sentence = Sentence.replace("…", " ")
@@ -54,7 +56,6 @@ def ParseSentence(Sentence):
     Sentence = Sentence.split()
     Sentence = DeleteArticles(Sentence)
     Sentence = DeleteNumbers(Sentence)
-    Sentence.append(Articles)
-    return Sentence
+    return [Sentence, Articles]
 
 
