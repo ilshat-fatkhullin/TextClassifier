@@ -1,4 +1,6 @@
 import pandas as pd
+import pymorphy2
+morph = pymorphy2.MorphAnalyzer()
 
 def DeletePunctuation(Sentence):
     Sentence = Sentence.replace(",", " ")
@@ -56,6 +58,7 @@ def ParseSentence(Sentence):
     Sentence = Sentence.split()
     Sentence = DeleteArticles(Sentence)
     Sentence = DeleteNumbers(Sentence)
+    Sentence = list(map(lambda x:morph.parse(x)[0].normal_form, Sentence))
     return [Sentence, Articles]
 
 
