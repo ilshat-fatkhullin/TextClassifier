@@ -56,9 +56,16 @@ def ParseSentence(Sentence):
     Articles = CountArticles(Sentence)
     Sentence = DeletePunctuation(Sentence)
     Sentence = Sentence.split()
-    Sentence = DeleteArticles(Sentence)
+    #Sentence = DeleteArticles(Sentence)
     Sentence = DeleteNumbers(Sentence)
     Sentence = list(map(lambda x:morph.parse(x)[0].normal_form, Sentence))
     return [Sentence, Articles]
 
+def ParseLabel(label):
+    if label == "negative":
+        return -1
+    elif label == "positive":
+        return 1
+    else:
+        return 0
 
